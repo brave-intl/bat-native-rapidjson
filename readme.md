@@ -1,3 +1,8 @@
+## A custom version of 'RapidJSON' JSON parser/generator.
+
+Based on [7e68aa0a21b7800ec98133cb106e49bd6536e25c](https://github.com/Tencent/rapidjson/commit/7e68aa0a21b7800ec98133cb106e49bd6536e25c) commit from 06.19.2018. 
+
+
 ![RapidJSON logo](doc/logo/rapidjson.png)
 
 ![Release version](https://img.shields.io/badge/release-v1.1.0-blue.svg)
