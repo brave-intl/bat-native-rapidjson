@@ -170,7 +170,7 @@ SchemaDocument schema(sd, &provider);
 
 # 标准的符合程度 {#Conformance}
 
-RapidJSON 通过了 [JSON Schema Test Suite](https://github.com/json-schema/JSON-Schema-Test-Suite) (Json Schema draft 4) 中 263 个测试的 262 个。
+RapidJSON 通过了 [JSON Schema Test Suite](https://github.com/json-schema-org/JSON-Schema-Test-Suite) (Json Schema draft 4) 中 263 个测试的 262 个。
 
 没通过的测试是 `refRemote.json` 中的 "change resolution scope" - "changed scope ref invalid"。这是由于未实现 `id` schema 关键字及 URI 合并功能。
 
@@ -215,14 +215,14 @@ RapidJSON 实现了一个简单的 NFA 正则表达式引擎，并预设使用�
 
 大部分 C++ JSON 库都未支持 JSON Schema。因此我们尝试按照 [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark) 去评估 RapidJSON 的 JSON Schema 校验器。该评测测试了 11 个运行在 node.js 上的 JavaScript 库。
 
-该评测校验 [JSON Schema Test Suite](https://github.com/json-schema/JSON-Schema-Test-Suite) 中的测试，当中排除了一些测试套件及个别测试。我们在 [`schematest.cpp`](test/perftest/schematest.cpp) 实现了相同的评测。
+该评测校验 [JSON Schema Test Suite](https://github.com/json-schema-org/JSON-Schema-Test-Suite) 中的测试，当中排除了一些测试套件及个别测试。我们在 [`schematest.cpp`](test/perftest/schematest.cpp) 实现了相同的评测。
 
 在 MacBook Pro (2.8 GHz Intel Core i7) 上收集到以下结果。
 
 |校验器|相对速度|每秒执行的测试数目|
 |---------|:------------:|:----------------------------:|
 |RapidJSON|155%|30682|
-|[`ajv`](https://github.com/epoberezkin/ajv)|100%|19770 (± 1.31%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|100%|19770 (± 1.31%)|
 |[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|70%|13835 (± 2.84%)|
 |[`jsen`](https://github.com/bugventure/jsen)|57.7%|11411 (± 1.27%)|
 |[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|26%|5145 (± 1.62%)|

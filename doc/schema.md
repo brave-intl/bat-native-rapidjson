@@ -170,7 +170,7 @@ SchemaDocument schema(sd, &provider);
 
 # Conformance {#Conformance}
 
-RapidJSON passed 262 out of 263 tests in [JSON Schema Test Suite](https://github.com/json-schema/JSON-Schema-Test-Suite) (Json Schema draft 4).
+RapidJSON passed 262 out of 263 tests in [JSON Schema Test Suite](https://github.com/json-schema-org/JSON-Schema-Test-Suite) (Json Schema draft 4).
 
 The failed test is "changed scope ref invalid" of "change resolution scope" in `refRemote.json`. It is due to that `id` schema keyword and URI combining function are not implemented.
 
@@ -215,14 +215,14 @@ For C++11 compiler, it is also possible to use the `std::regex` by defining `RAP
 
 Most C++ JSON libraries do not yet support JSON Schema. So we tried to evaluate the performance of RapidJSON's JSON Schema validator according to [json-schema-benchmark](https://github.com/ebdrup/json-schema-benchmark), which tests 11 JavaScript libraries running on Node.js.
 
-That benchmark runs validations on [JSON Schema Test Suite](https://github.com/json-schema/JSON-Schema-Test-Suite), in which some test suites and tests are excluded. We made the same benchmarking procedure in [`schematest.cpp`](test/perftest/schematest.cpp).
+That benchmark runs validations on [JSON Schema Test Suite](https://github.com/json-schema-org/JSON-Schema-Test-Suite), in which some test suites and tests are excluded. We made the same benchmarking procedure in [`schematest.cpp`](test/perftest/schematest.cpp).
 
 On a Mac Book Pro (2.8 GHz Intel Core i7), the following results are collected.
 
 |Validator|Relative speed|Number of test runs per second|
 |---------|:------------:|:----------------------------:|
 |RapidJSON|155%|30682|
-|[`ajv`](https://github.com/epoberezkin/ajv)|100%|19770 (± 1.31%)|
+|[`ajv`](https://github.com/ajv-validator/ajv)|100%|19770 (± 1.31%)|
 |[`is-my-json-valid`](https://github.com/mafintosh/is-my-json-valid)|70%|13835 (± 2.84%)|
 |[`jsen`](https://github.com/bugventure/jsen)|57.7%|11411 (± 1.27%)|
 |[`schemasaurus`](https://github.com/AlexeyGrishin/schemasaurus)|26%|5145 (± 1.62%)|

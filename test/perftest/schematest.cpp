@@ -129,7 +129,7 @@ public:
     }
 
 private:
-    // Using the same exclusion in https://github.com/json-schema/JSON-Schema-Test-Suite
+    // Using the same exclusion in https://github.com/json-schema-org/JSON-Schema-Test-Suite
     static bool IsExcludeTestSuite(const std::string& description) {
         const char* excludeTestSuites[] = {
             //lost failing these tests
@@ -150,7 +150,7 @@ private:
         return false;
     }
 
-    // Using the same exclusion in https://github.com/json-schema/JSON-Schema-Test-Suite
+    // Using the same exclusion in https://github.com/json-schema-org/JSON-Schema-Test-Suite
     static bool IsExcludeTest(const std::string& description) {
         const char* excludeTests[] = {
             //lots of validators fail these
