@@ -239,7 +239,7 @@ Parsing string into `double` is difficult. The standard library function `strtod
 
 When using `kParseFullPrecisionFlag`, the parsers calls `internal::StrtodFullPrecision()` instead, and this function actually implemented 3 versions of conversion methods.
 1. [Fast-Path](http://www.exploringbinary.com/fast-path-decimal-to-floating-point-conversion/).
-2. Custom DIY-FP implementation as in [double-conversion](https://github.com/floitsch/double-conversion).
+2. Custom DIY-FP implementation as in [double-conversion](https://github.com/google/double-conversion).
 3. Big Integer Method as in (Clinger, William D. How to read floating point numbers accurately. Vol. 25. No. 6. ACM, 1990).
 
 If the first conversion methods fail, it will try the second, and so on.
@@ -256,7 +256,7 @@ Although SSE2 version is the fastest but the difference is minor by comparing to
 
 Originally RapidJSON uses `snprintf(..., ..., "%g")`  to achieve double-to-string conversion. This is not accurate as the default precision is 6. Later we also find that this is slow and there is an alternative.
 
-Google's V8 [double-conversion](https://github.com/floitsch/double-conversion
+Google's V8 [double-conversion](https://github.com/google/double-conversion
 ) implemented a newer, fast algorithm called Grisu3 (Loitsch, Florian. "Printing floating-point numbers quickly and accurately with integers." ACM Sigplan Notices 45.6 (2010): 233-243.).
 
 However, since it is not header-only so that we implemented a header-only version of Grisu2. This algorithm guarantees that the result is always accurate. And in most of cases it produces the shortest (optimal) string representation.

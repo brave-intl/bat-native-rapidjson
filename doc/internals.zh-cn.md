@@ -239,7 +239,7 @@ void SkipWhitespace(InputStream& is) {
 
 当使用 `kParseFullPrecisionFlag` 时，编译器会改为调用 `internal::StrtodFullPrecision()` ，这个函数会自动调用三个版本的转换。
 1. [Fast-Path](http://www.exploringbinary.com/fast-path-decimal-to-floating-point-conversion/)。
-2. [double-conversion](https://github.com/floitsch/double-conversion) 中的自定义 DIY-FP 实现。
+2. [double-conversion](https://github.com/google/double-conversion) 中的自定义 DIY-FP 实现。
 3. （Clinger, William D. How to read floating point numbers accurately. Vol. 25. No. 6. ACM, 1990） 中的大整数算法。
 
 如果第一个转换方法失败，则尝试使用第二种方法，以此类推。
@@ -256,7 +256,7 @@ void SkipWhitespace(InputStream& is) {
 
 原来 RapidJSON 使用 `snprintf(..., ..., "%g")` 来进行双精度浮点数到字符串的转换。这是不准确的，因为默认的精度是6。随后我们发现它很缓慢，而且有其它的替代品。
 
-Google 的 V8 [double-conversion](https://github.com/floitsch/double-conversion
+Google 的 V8 [double-conversion](https://github.com/google/double-conversion
 ) 实现了更新的、快速的被称为 Grisu3 的算法（Loitsch, Florian. "Printing floating-point numbers quickly and accurately with integers." ACM Sigplan Notices 45.6 (2010): 233-243.）。
 
 然而，这个实现不是仅头文件的，所以我们实现了一个仅头文件的 Grisu2 版本。这个算法保证了结果永远精确。而且在大多数情况下，它会生成最短的（可选）字符串表示。

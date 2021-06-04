@@ -268,7 +268,7 @@ static void TestParseDouble() {
     TEST_DOUBLE(fullPrecision, "1.00000000000000011102230246251565404236316680908203124", 1.0); // previous double
     TEST_DOUBLE(fullPrecision, "1.00000000000000011102230246251565404236316680908203126", 1.00000000000000022); // next double
 
-    // Numbers from https://github.com/floitsch/double-conversion/blob/master/test/cctest/test-strtod.cc
+    // Numbers from https://github.com/google/double-conversion/blob/master/test/cctest/test-strtod.cc
 
     TEST_DOUBLE(fullPrecision, "72057594037927928.0", 72057594037927928.0);
     TEST_DOUBLE(fullPrecision, "72057594037927936.0", 72057594037927936.0);
